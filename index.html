@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This domain is available for sale. Contact us for more details.">
+    <title>Domain For Sale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function countdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 10); 
+
+            const timer = setInterval(() => {
+                const now = new Date();
+                const timeLeft = endDate - now;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('timer').innerHTML = "<span class='text-red-600'>Time is up! Contact us now!</span>";
+                } else {
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    document.getElementById('timer').innerHTML = `
+                        <span class='text-4xl font-bold text-gray-800'>${days}</span> <span class='text-xl text-gray-500'>Days</span> |
+                        <span class='text-4xl font-bold text-gray-800'>${hours}</span> <span class='text-xl text-gray-500'>Hours</span>
+                    `;
+                }
+            }, 1000);
+        }
+
+        window.onload = countdown;
+    </script>
+</head>
+<body class="bg-gray-100">
+    <div class="bg-white shadow-lg min-h-screen p-8 text-center border border-gray-200 flex flex-col justify-center">
+        <div class="flex justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3a1 1 0 00.293.707l2 2a1 1 0 101.414-1.414L11 9.586V7z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <p id="timer" class="text-2xl text-red-600 font-bold mb-6">Loading timer...</p>
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-4">This Domain is Available for Sale</h1>
+        <p class="text-3xl font-semibold text-green-600 mb-8">Price: 6000 BDT</p>
+        <p class="text-lg text-gray-600 mb-12">Looking to acquire this domain? Offer your price below!</p>
+        <div class="mt-6">
+            <a href="mailto:sales@techviewbd.com" class="inline-block bg-blue-600 text-white font-medium text-xl px-8 py-4 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.94 6.94a1.5 1.5 0 012.122 0L10 11.879l4.938-4.938a1.5 1.5 0 012.122 2.122L12.122 14l4.938 4.938a1.5 1.5 0 11-2.122 2.122L10 16.122l-4.938 4.938a1.5 1.5 0 01-2.122-2.122L7.878 14l-4.938-4.938a1.5 1.5 0 010-2.122z" />
+                </svg>
+                Offer Your Price
+            </a>
+        </div>
+    </div>
+</body>
+</html>
